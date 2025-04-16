@@ -5,7 +5,7 @@ exports.validateUser = async (req, res) => {
 
   if (!username || !password) {
     return res.status(400).json({
-      message: "Authenticate Gagal: Username dan Password tidak disertakan",
+      message: "Username dan Password tidak disertakan",
       responseCode: 400,
       success: false,
     });
@@ -18,7 +18,7 @@ exports.validateUser = async (req, res) => {
 
     if (!dataUser) {
       return res.status(400).json({
-        message: "Authenticate Gagal: Username tidak ditemukan",
+        message: "Username tidak ditemukan",
         responseCode: 400,
         success: false,
       });
@@ -26,7 +26,7 @@ exports.validateUser = async (req, res) => {
 
     if (dataUser.password !== password) {
       return res.status(401).json({
-        message: "Authenticate Gagal: Username atau Password tidak sesuai",
+        message: "Username atau Password tidak sesuai",
         responseCode: 401,
         success: false,
       });
